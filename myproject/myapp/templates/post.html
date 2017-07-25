@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post a Picture</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus|Rancho" rel="stylesheet">
+    <style>
+        body{
+
+        background:url("{% static 'images/wooder.jpg'%}");
+
+
+        }
+
+        .myclass{
+    	width:300px !important;
+    	height:200px;
+    	margin:0 auto;
+    	margin-top: 40px;
+    	background-color: rgba(0,0,0,0.3);
+    	padding:30px;
+    	font-family:Marcellus;
+    	font-size:15px;
+    }
+
+
+
+.navbar{
+    height: 100px !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    color: white !important;
+    border: 0 !important;
+    padding-top: 20px !important;
+}
+.navbar-brand{
+    font-size: 35px !important;
+    font-family: Julius Sans One !important;
+    color:white !important;
+}
+
+li{
+    font-size: 25px !important;
+    padding: 10px !important;
+    font-family: Julius Sans One !important;
+
+}
+
+h1{
+
+  text-align:center;
+   font-family: Julius Sans One !important;
+   color:black;
+
+}
+
+
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> <i class="fa fa-upload" aria-hidden="true"></i> Upload To Win!</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><form action="/logout/">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-warning btn-lg" value="Log Out">
+            </form></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<br>
+     <br>
+    <h1>Post a Picture</h1>
+
+    <div class="myclass">
+    <form method="POST" enctype="multipart/form-data" action="/posts/">
+      {% csrf_token %}
+       <div class="form-group">
+
+
+    <input type="file"  name="image" required>
+
+  </div>
+
+       <div class="form-group">
+       <input style="padding:5px" type="text" placeholder="Caption" name="caption" value="{{ caption }}" required>
+       </div>
+        <div class="form-group">
+      <input type="submit" class="btn btn-primary" value="Add a picture">
+        </div>
+   </form>
+
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+ .myclass{
+    	width:300px !important;
+    	height:225px;
+    	margin:0 auto;
+    	margin-top: 40px;
+    	background-color: rgba(0,0,0,0.3);
+    	padding:30px;
+    	font-family:Marcellus;
+    	font-size:15px;
+    }
+
+
+.navbar{
+    height: 100px !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    color: white !important;
+    border: 0 !important;
+    padding-top: 20px !important;
+}
+.navbar-brand{
+    font-size: 35px !important;
+    font-family: Julius Sans One !important;
+    color:white !important;
+}
+
+li{
+    font-size: 25px !important;
+    padding: 10px !important;
+    font-family: Julius Sans One !important;
+
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Post</title>
+</head>
+<body>
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<div lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feeds</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/feed.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus|Rancho" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Rancho" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+    <style>
+        body{
+
+        background: url("{% static 'images/wooder.jpg'%}");
+
+
+
+        }
+    </style>
+</head>
+<div>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> <i class="fa fa-upload" aria-hidden="true"></i> Upload To Win!</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><form action="/logout/">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-warning btn-lg" value="Log Out">
+            </form></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+<br><br>
+<div class= "container">
+    <div class="jumbotron">
+        <div class="new">
+        <h2>{{ username }}</h2>
+        <h2>Total Score : {{ total_points }} </h2>
+
+
+        </div>
+    </div>
+</div>
+{%for post in posts%}
+    <div class="container">
+        <div class="jumbotron">
+<div class="head">
+
+ <h3>{{ post.user.username }}</h3>
+<h4> # {{ post.caption }} </h4>
+</div>
+
+  <img src ="{{ post.image_url }}" class="image">
+
+
+<div class="foot">
+    <span><b>Points: {{ post.points }}</b></span>
+    <div>
+      {{ post.like_count }} like(s)
+      <span>{{ post.comment_count }}</span> Comment(s)
+    </div>
+    <br>
+
+
+
+
+
+        </div>
+        </div>
+    </div>
+</div>
+
+    {% endfor %}
+
+</body>
+</html>

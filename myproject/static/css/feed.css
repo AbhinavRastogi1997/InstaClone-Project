@@ -1,0 +1,87 @@
+.image{
+width:700px;
+height:500px;
+}
+
+.post{
+ text-align:center !important;
+}
+
+.head{
+
+width:700px;
+border:1px solid black;
+height:auto;
+background: white;
+padding:10px;
+font-family:Josefin Sans;
+}
+
+.foot{
+width:700px;
+border:1px solid black;
+height:auto;
+background: white;
+padding:10px;
+font-family:Josefin Sans;
+
+}
+
+.jumbotron{
+
+padding-left :200px !important;
+background : rgba(0,0,0,0.4) !important;
+}
+
+.navbar{
+    height: 100px !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    color: white !important;
+    border: 0 !important;
+    padding-top: 20px !important;
+}
+.navbar-brand{
+    font-size: 35px !important;
+    font-family: Julius Sans One !important;
+    color:white !important;
+}
+
+li{
+    font-size: 25px !important;
+    padding: 10px !important;
+    font-family: Julius Sans One !important;
+
+}
+
+a{
+color:white !important;
+}
+
+
+input[type="text"]{
+
+padding:10px;
+width:500px;
+}
+
+h2{
+color:white !important;
+}
+
+.span{
+
+margin-left: 15px !important;
+}
+
+.new{
+color:white;
+font-family:Cuprum;
+display:inline;
+}
+
+.jumbo{
+width: 700px !important;
+height :200px !important;
+border: 1px solid black !important;
+
+}

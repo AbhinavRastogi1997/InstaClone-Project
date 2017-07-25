@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Login Page</title>
+	 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css'%}">
+	 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <style>
+        body{
+
+       background: url("{% static 'images/wood1.jpg'%}") !important;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> <i class="fa fa-upload" aria-hidden="true"></i> Upload To Win!</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/"> <i class="fa fa-user-plus" aria-hidden="true"></i> SignUp</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="form">
+<h1>Login</h1>
+<br>
+<form class="form-horizontal" role="form" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+
+    <label class= "col-lg-3 control-label" for="username"></label>
+    <div class="input-group col-lg-6">
+   <div class="input-group-addon">
+    <i class="fa fa-user" aria-hidden="true"></i>
+   </div>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="{{ username }}" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class= "col-lg-3 control-label" for="password"></label>
+    <div class="input-group col-lg-6">
+   <div class="input-group-addon">
+    <i class="fa fa-key" aria-hidden="true"></i>
+   </div>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="{{ password }}" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class= "col-lg-3 control-label" for="submit"></label>
+    <div class="col-lg-6">
+<input id="submit" type="submit" class="btn btn-success btn-block" value="Submit">
+</div>
+</div>
+</form>
+</div>
+{% if message %}
+
+<div style="margin:20px 0px 0px 475px ">
+    <button class="btn btn-lg btn-warning" style="padding:20px"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ message }}</button>
+</div>
+
+{% endif %}
+</body>
+</html>

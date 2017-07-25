@@ -1,0 +1,36 @@
+
+
+    h1{
+    	font-family: Julius Sans One;
+    	color:white;
+    }
+
+    .form{
+    	width:500px;
+    	height:275px;
+    	text-align:center;
+    	margin:0 auto;
+    	margin-top: 40px;
+    	background-color: rgba(0,0,0,0.5);
+    	padding:30px;
+    }
+
+    .navbar{
+    height: 100px !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    color: white !important;
+    border: 0 !important;
+    padding-top: 20px !important;
+}
+.navbar-brand{
+    font-size: 35px !important;
+    font-family: Julius Sans One !important;
+}
+
+li{
+    font-size: 25px !important;
+    padding: 10px !important;
+    font-family: Julius Sans One !important;
+ 
+}
+
