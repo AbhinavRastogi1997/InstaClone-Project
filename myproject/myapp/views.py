@@ -19,7 +19,6 @@ API_KEY='cc0a3d1823a8451da412642e6ba8c932' #Access Token for using the Clarifai 
 
 #importing sendgrid module
 import  sendgrid
-SG_API_KEY='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' #Access Token for using the Sendgrid API
 
 #imoorting  Imagur module
 from imgurpython import ImgurClient
